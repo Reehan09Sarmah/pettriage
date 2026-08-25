@@ -26,6 +26,7 @@ jobs:
         run: |
           uv pip install --system -r requirements.txt
           uv pip install --system -r requirements-dev.txt
+          uv pip install --system -e .
 
       - name: Lint with ruff
         run: ruff check src/ tests/
