@@ -8,6 +8,9 @@ data/raw/
 data/processed/
 mlruns/
 mlartifacts/
+mlflow.db
+/models/
+*.joblib
 .ipynb_checkpoints/
 .env
 .DS_Store

@@ -25,5 +25,9 @@ RANDOM_STATE = 42
 TEST_SIZE = 0.2  # 20% of data held out for evaluation
 
 # ── MLflow ─────────────────────────────────────────────────────────────────────
-MLFLOW_TRACKING_URI = str(ROOT_DIR / "mlruns")
+# SQLite backend, not a plain mlruns/ folder: MLflow 3.x put the folder-based
+# ("file://") store into maintenance mode and recommends a database backend even
+# for single-user local setups. This is still just one local file (mlflow.db),
+# no server/account needed — same spirit as the original folder-based plan.
+MLFLOW_TRACKING_URI = "sqlite:///" + str(ROOT_DIR / "mlflow.db")
 MLFLOW_EXPERIMENT_NAME = "pettriage"
